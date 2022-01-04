@@ -1,0 +1,5 @@
+#############################
+#	Autoloaded callback		#
+#	Function for zsh-async	#
+#############################
+echo -ne "\e[s\e[2A\e[`echo "$(whoami)  $(hostname)"|wc -c`C$@\e[u";

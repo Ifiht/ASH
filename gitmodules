@@ -1,0 +1,20 @@
+[submodule "submodules/LS_COLORS"]
+	path = submodules/LS_COLORS
+	url = https://github.com/trapd00r/LS_COLORS.git
+	branch = master
+	update = rebase
+[submodule "submodules/z"]
+	path = submodules/z
+	url = https://github.com/rupa/z.git
+	branch = master
+	update = rebase
+[submodule "submodules/nano"]
+	path = submodules/nano
+	url = https://github.com/scopatz/nanorc.git
+	branch = v2.9
+[submodule "submodules/zsh-syntax"]
+	path = submodules/zsh-syntax
+	url = https://github.com/zsh-users/zsh-syntax-highlighting.git
+[submodule "ASH"]
+	path = ASH
+	url = git@github.com:Ifiht/ASH.git
