@@ -18,4 +18,4 @@ jobs:
       run: ./init.sh
       
     - name: rubyrun
-      run: ruby ./init.sh
+      run: ruby ./init.rb
