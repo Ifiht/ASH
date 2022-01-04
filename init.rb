@@ -112,7 +112,7 @@ pa.reject! { |e| e.empty? }
 exdr = pa.join(':')
 pt = "export PATH=\"#{exdr}:$PATH\"\n"
 #==============// Create .zshrc //=======================================#
-sp = "export PROMPT=\"\033[38;5;#{c_user}m%n\e[0m@\033[38;5;#{c_host}m%m\e[0m %~ \n%# \"\n"
+#sp = "export PROMPT=\"\033[38;5;#{c_user}m%n\e[0m@\033[38;5;#{c_host}m%m\e[0m %~ \n%# \"\n"
 if uname=="MINGW64" # workaround for git bash, zsh not available
 	sh = %x(which bash).to_s.chomp
 elsif
@@ -131,7 +131,7 @@ File.open("./zshrc", 'r+') do |file|
 		l1 = f1.each_line.to_a
 		l1[0] = "\#!#{sh}\n"
 		l1[1] = pt
-		l1[2] = sp
+		#l1[2] = sp
 		f1.rewind
 	end
 	File.open(f2, 'r+') do |f2| # Open OS template.zsh
