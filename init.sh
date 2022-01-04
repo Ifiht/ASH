@@ -11,12 +11,12 @@ case "$os" in
 	;;
 	*Microsoft*)
 		echo "Assuming host is WSL";
-		sudo apt install coreutils dbus dbus-x11 figlet file findutils fortune-mod geoip-database git gnupg gzip less lsb-base lsb-release lshw lsof make minicom nano ncurses-base net-tools openjdk-8-jdk pngcrush rand readline-common screen tcpdump telnet tmux toilet x11proto-core-dev xauth xdelta3 xfsprogs zsh net-tools;
+		sudo apt install coreutils dbus dbus-x11 figlet file findutils fortune-mod geoip-database git gnupg gzip less lsb-base lsb-release lshw lsof make minicom nano ncurses-base net-tools openjdk-8-jdk pngcrush rand readline-common screen tcpdump telnet tmux toilet x11proto-core-dev xauth xdelta3 xfsprogs zsh;
 		os=2;
 	;;
 	*linux* | *Linux*)
 		echo "Assuming host is Linux";
-		sudo apt install coreutils dbus figlet file findutils fortune-mod geoip-database git gnupg gzip less lsb-base lsb-release lshw lsof make nano ncurses-base net-tools openjdk-8-jdk pngcrush rand readline-common screen tcpdump telnet tmux zsh;
+		sudo apt install coreutils dbus figlet file findutils fortune-mod geoip-database git gnupg gzip less lsb-base lsb-release lshw lsof make nano ncurses-base net-tools openjdk-8-jdk pngcrush rand readline-common screen tcpdump telnet tmux unattended-upgrades zsh;
 		sudo dpkg-reconfigure --priority=low unattended-upgrades # start auto-upgrades
 		os=2;
 	;;
