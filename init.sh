@@ -1,4 +1,5 @@
 #!/bin/sh
+set -eu # "e" exits if any command fails, "u" exits if any variable is unset
 
 os=`uname -a`;
 echo "Beginning bootstrap..."
