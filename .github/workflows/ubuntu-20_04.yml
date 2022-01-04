@@ -17,5 +17,8 @@ jobs:
     - name: initialize
       run: ./init.sh
       
+    - name: generate-ssh
+      run: ssh-keygen -t rsa -N '' -f ~/.ssh/id_rsa <<< y
+      
     - name: rubyrun
       run: ruby ./init.rb
