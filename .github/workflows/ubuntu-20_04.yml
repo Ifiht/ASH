@@ -1,0 +1,21 @@
+name: Ubuntu 20.04 CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  ubuntu-20_04-test:
+
+    runs-on: ubuntu-20.04
+
+    steps:
+    - uses: actions/checkout@v2
+    
+    - name: initialize
+      run: ./init.sh
+      
+    - name: rubyrun
+      run: ruby ./init.sh
