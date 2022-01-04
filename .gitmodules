@@ -15,3 +15,6 @@
 [submodule "submodules/zsh-syntax"]
 	path = submodules/zsh-syntax
 	url = https://github.com/zsh-users/zsh-syntax-highlighting.git
+[submodule "submodules/z-suggestions"]
+	path = submodules/z-suggestions
+	url = https://github.com/zsh-users/zsh-autosuggestions
