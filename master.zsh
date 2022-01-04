@@ -1,7 +1,7 @@
 ####### SHEBANG PLACEHOLDER ###### - this MUST remain line #1
 ####### PATH PLACEHOLDER ######### - this MUST remain line #2
 ####### PROMPT PLACEHOLDER ####### - this MUST remain line #3
-export RPROMPT="%*"
+#export RPROMPT="%*"
 #+===//===> Update all functions
 fpath=( $HOME/.ash/func "${fpath[@]}" ) 
 ####### Source Files #############
