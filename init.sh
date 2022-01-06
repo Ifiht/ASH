@@ -31,6 +31,7 @@ case "$os" in
 	exit 1
 esac
 
+#GPG command finder
 GPGCMD1=`which gpg`
 GPGCMD2=`which gpg2`
 
@@ -39,6 +40,21 @@ if ! [ -z "$GPGCMD1" ]; then
 fi
 if ! [ -z "$GPGCMD2" ]; then 
     GPGCMD="$GPGCMD2"
+fi
+
+#SHELL command finder (rvm & nvm don't support Almquist)
+SHELLCMD1=`which bash`
+SHELLCMD2=`which zsh`
+SHELLCMD3=`which ksh`
+
+if ! [ -z "$SHELLCMD3" ]; then 
+    SHELLCMD="$SHELLCMD3"
+fi
+if ! [ -z "$SHELLCMD2" ]; then 
+    SHELLCMD="$SHELLCMD2"
+fi
+if ! [ -z "$SHELLCMD1" ]; then 
+    SHELLCMD="$SHELLCMD1"
 fi
 
 #RVM installation:
@@ -52,8 +68,7 @@ if ! [ -d $HOME/.rvm ]; then
 	command curl -sSL https://rvm.io/mpapis.asc | gpg --import -
 	command curl -sSL https://rvm.io/pkuczynski.asc | gpg --import -
 	curl -sSL https://get.rvm.io | bash -s stable && . $HOME/.rvm/scripts/rvm
-	. $HOME/.rvm/scripts/rvm
-	rvm install 2.7
+	$SHELLCMD -c "source $HOME/.rvm/scripts/rvm && rvm install 2.7"
 fi
 
 #NVM installation:
@@ -61,6 +76,5 @@ if ! [ -d $HOME/.nvm ]; then
 	echo "Installing NVM..."
 	mkdir $HOME/.nvm
 	curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh | bash
-	. $HOME/.nvm/nvm.sh
-	nvm install 16
+	$SHELLCMD -c "source $HOME/.nvm/nvm.sh && nvm install 16"
 fi
